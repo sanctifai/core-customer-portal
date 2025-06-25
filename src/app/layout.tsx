@@ -50,8 +50,8 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className} bg-white dark:bg-black text-gray-900 dark:text-white`}>
+      <html lang="en" suppressHydrationWarning className="dark">
+        <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen`}>
           <ThemeProvider>
             <Toaster richColors position="top-right" theme="system" />
             {children}
