@@ -20,7 +20,7 @@ export default function DashboardNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-black/5 dark:bg-white/5 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
+    <nav className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -38,7 +38,7 @@ export default function DashboardNav() {
                     'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
                     pathname === item.href
                       ? 'border-blue-500 text-blue-500'
-                      : 'border-transparent text-muted-foreground hover:text-foreground hover:border-black/20 dark:hover:border-white/20'
+                      : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                   )}
                 >
                   {item.name}
