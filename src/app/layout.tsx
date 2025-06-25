@@ -30,7 +30,7 @@ export default function RootLayout({
         variables: { colorPrimary: '#2563eb' },
         elements: {
           card: "bg-white dark:bg-gray-900",
-          navbar: "bg-white dark:bg-gray-900",
+          navbar: "bg-white dark:bg-gray-900 ",
           navbarButton: "text-gray-600 dark:text-gray-300",
           headerTitle: "text-gray-900 dark:text-white",
           headerSubtitle: "text-gray-600 dark:text-gray-400",
@@ -51,9 +51,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning className="dark">
-        <body className={`${inter.className} bg-gray-50 dark:bg-black min-h-screen antialiased`}>
+        <body className={`${inter.className} bg-red-500 dark:bg-black min-h-screen antialiased`}>
           <ThemeProvider>
-            <div className="min-h-screen bg-gray-50 dark:bg-black">
+            <div className="min-h-screen bg-red-500 dark:bg-black">
               <Toaster richColors position="top-right" theme="system" />
               {children}
             </div>

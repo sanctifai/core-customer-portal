@@ -22,7 +22,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
+    <div className="space-y-6">
       <div>
         <h2 className="text-3xl font-bold tracking-tight">Profile</h2>
         <p className="text-muted-foreground">
