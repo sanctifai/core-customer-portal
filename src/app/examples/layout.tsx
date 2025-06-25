@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FileText, Lightbulb, Palette } from 'lucide-react';
+import { Bell, FileText, Lightbulb, Palette } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
@@ -11,6 +11,12 @@ const navigation = [
     href: '/examples/icons',
     icon: Palette,
     description: 'Learn how to use Lucide icons in your application'
+  },
+  {
+    name: 'Toast Notifications',
+    href: '/examples/toast',
+    icon: Bell,
+    description: 'Beautiful toast notifications with Sonner'
   },
   // Add more examples here as we create them
   // {
