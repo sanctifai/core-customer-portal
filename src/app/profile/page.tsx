@@ -1,42 +1,26 @@
-'use client';
-
-import { useUser } from '@clerk/nextjs';
-import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 export default function ProfilePage() {
-  const { user } = useUser();
   const [isEditing, setIsEditing] = useState(false);
-
   const [formData, setFormData] = useState({
-    firstName: user?.firstName || '',
-    lastName: user?.lastName || '',
-    email: user?.primaryEmailAddress?.emailAddress || '',
-    company: user?.publicMetadata?.company || '',
-    phone: user?.primaryPhoneNumber?.phoneNumber || '',
+    firstName: "John",
+    lastName: "Doe",
+    email: "john@example.com",
+    phone: "+1 (555) 000-0000",
+    company: "Acme Inc",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      await user?.update({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        publicMetadata: {
-          ...user.publicMetadata,
-          company: formData.company,
-        },
-      });
-      setIsEditing(false);
-    } catch (error) {
-      console.error('Error updating profile:', error);
-    }
+    // Handle form submission
+    setIsEditing(false);
   };
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-4xl mx-auto p-6 space-y-6">
       <div>
         <h2 className="text-3xl font-bold tracking-tight">Profile</h2>
         <p className="text-muted-foreground">
