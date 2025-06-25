@@ -37,7 +37,7 @@ export default function ExamplesLayout({
   return (
     <div className="min-h-[calc(100vh-4rem)] flex">
       {/* Sidebar */}
-      <div className="w-80 border-r bg-white">
+      <div className="w-80 flex-shrink-0 border-r bg-white">
         <div className="p-8">
           <h2 className="text-2xl font-bold text-gray-900">Examples</h2>
           <p className="mt-2 text-sm text-gray-600">
@@ -69,8 +69,10 @@ export default function ExamplesLayout({
       </div>
 
       {/* Main content */}
-      <div className="flex-1 overflow-y-auto">
-        {children}
+      <div className="flex-1 overflow-y-auto bg-white">
+        <div className="px-8 py-8">
+          {children}
+        </div>
       </div>
     </div>
   );

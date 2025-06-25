@@ -33,7 +33,7 @@ export default function ToastExamplePage() {
   };
 
   return (
-    <div className="container py-10 space-y-10">
+    <div className="space-y-10">
       <div>
         <h1 className="text-3xl font-bold mb-6">Toast Notifications Guide</h1>
         <p className="text-gray-600 mb-4">
