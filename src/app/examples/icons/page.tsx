@@ -65,7 +65,7 @@ const IconButton = ({
 
 export default function IconsPage() {
   return (
-    <div className="container mx-auto py-10 space-y-10">
+    <div className="container py-10 space-y-10">
       <div>
         <h1 className="text-3xl font-bold mb-6">Lucide Icons Usage Guide</h1>
         <p className="text-gray-600 mb-4">
