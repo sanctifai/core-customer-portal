@@ -84,6 +84,38 @@ A modern, full-stack customer portal template built with Next.js, TypeScript, an
 - Start production server: `npm start`
 - Lint code: `npm run lint`
 
+## 🌐 Deployment on Render
+
+This project includes a `render.yaml` configuration file for easy deployment on Render.
+
+### Prerequisites
+
+1. Create a [Render account](https://render.com)
+2. Set up a [Clerk account](https://clerk.dev) and create an application
+3. Set up a [Supabase account](https://supabase.com) and create a project
+
+### Deployment Steps
+
+1. Fork or clone this repository
+2. Connect your GitHub account to Render
+3. Create a new Web Service on Render
+4. Choose "Deploy from GitHub" and select this repository
+5. Render will automatically detect the configuration from `render.yaml`
+6. Add the following environment variables in the Render dashboard:
+   - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+   - `CLERK_SECRET_KEY`
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+7. Click "Create Web Service"
+
+The application will be automatically deployed and available at your Render URL.
+
+### Custom Domain (Optional)
+
+1. Go to your Web Service settings in Render
+2. Navigate to the "Custom Domain" section
+3. Add your domain and follow the DNS configuration instructions
+
 ## 📝 License
 
 MIT

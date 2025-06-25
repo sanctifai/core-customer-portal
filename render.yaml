@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: core-customer-portal
+    env: node
+    region: oregon # or your preferred region
+    plan: starter # or your preferred plan
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+        sync: false # This means it needs to be set manually in Render dashboard
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: NEXT_PUBLIC_CLERK_SIGN_IN_URL
+        value: /login
+      - key: NEXT_PUBLIC_CLERK_SIGN_UP_URL
+        value: /register
+      - key: NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL
+        value: /dashboard
+      - key: NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL
+        value: /dashboard
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+    autoDeploy: true
+    domains:
+      - fromEnv: RENDER_EXTERNAL_DOMAIN # Optional: If you want to use a custom domain
+    disk:
+      name: tmp
+      mountPath: /tmp
+      sizeGB: 1 # Adjust based on your needs
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains 
