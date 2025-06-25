@@ -20,12 +20,12 @@ export default function DashboardNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow dark:shadow-gray-800">
+    <nav className="bg-black/5 dark:bg-white/5 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/dashboard" className="text-xl font-bold text-gray-900 dark:text-white">
+              <Link href="/dashboard" className="text-xl font-bold">
                 Customer Portal
               </Link>
             </div>
@@ -37,8 +37,8 @@ export default function DashboardNav() {
                   className={cn(
                     'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
                     pathname === item.href
-                      ? 'border-blue-500 text-gray-900 dark:text-white'
-                      : 'border-transparent text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-300'
+                      ? 'border-blue-500 text-blue-500'
+                      : 'border-transparent text-muted-foreground hover:text-foreground hover:border-black/20 dark:hover:border-white/20'
                   )}
                 >
                   {item.name}

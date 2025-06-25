@@ -34,24 +34,24 @@ export default function RootLayout({
           navbarButton: "text-gray-600 dark:text-gray-300",
           headerTitle: "text-gray-900 dark:text-white",
           headerSubtitle: "text-gray-600 dark:text-gray-400",
-          dividerLine: "bg-gray-200 dark:bg-gray-700",
+          dividerLine: "bg-gray-200 dark:bg-gray-800",
           dividerText: "text-gray-600 dark:text-gray-400",
           formFieldLabel: "text-gray-700 dark:text-gray-300",
-          formFieldInput: "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600",
+          formFieldInput: "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700",
           formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white",
-          formButtonReset: "hover:bg-gray-100 dark:hover:bg-gray-700",
+          formButtonReset: "hover:bg-gray-100 dark:hover:bg-gray-800",
           footerActionLink: "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300",
           footerActionText: "text-gray-600 dark:text-gray-400",
           userPreviewMainIdentifier: "text-gray-900 dark:text-white",
           userPreviewSecondaryIdentifier: "text-gray-600 dark:text-gray-400",
-          userButtonPopoverActionButton: "hover:bg-gray-100 dark:hover:bg-gray-700",
+          userButtonPopoverActionButton: "hover:bg-gray-100 dark:hover:bg-gray-800",
           userButtonPopoverActionButtonText: "text-gray-600 dark:text-gray-300",
           userButtonPopoverActionButtonIcon: "text-gray-600 dark:text-gray-300",
         },
       }}
     >
       <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
+        <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white`}>
           <ThemeProvider>
             <Toaster richColors position="top-right" theme="system" />
             {children}
