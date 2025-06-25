@@ -9,7 +9,7 @@ services:
     healthCheckPath: /
     envVars:
       - key: NODE_VERSION
-        value: 18.17.0
+        value: 22.16.0
       - key: NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
         sync: false # This means it needs to be set manually in Render dashboard
       - key: CLERK_SECRET_KEY

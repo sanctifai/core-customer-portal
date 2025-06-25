@@ -1,8 +1,9 @@
-import { auth } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';
 import { supabase } from './supabase';
 
 export async function getUser() {
-  const { userId } = auth();
+  const session = await auth();
+  const userId = session.userId;
   
   if (!userId) {
     return null;
