@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -30,7 +23,7 @@ export default function RootLayout({
         variables: { colorPrimary: '#2563eb' },
         elements: {
           card: "bg-white dark:bg-gray-900",
-          navbar: "bg-white dark:bg-gray-900 ",
+          navbar: "bg-white dark:bg-gray-900",
           navbarButton: "text-gray-600 dark:text-gray-300",
           headerTitle: "text-gray-900 dark:text-white",
           headerSubtitle: "text-gray-600 dark:text-gray-400",
@@ -50,10 +43,10 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en" suppressHydrationWarning className="dark">
-        <body className={`${inter.className}  min-h-screen antialiased`}>
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
           <ThemeProvider>
-            <div className="min-h-screen bg-red-100 dark:bg-red-500">
+            <div className="min-h-screen bg-white dark:bg-gray-950">
               <Toaster richColors position="top-right" theme="system" />
               {children}
             </div>
