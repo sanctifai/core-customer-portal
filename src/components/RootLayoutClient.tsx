@@ -4,7 +4,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { Toaster } from 'sonner';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { NextFont } from 'next/dist/compiled/@next/font';
-import '../app/globals.css';
 
 interface RootLayoutClientProps {
   children: React.ReactNode;

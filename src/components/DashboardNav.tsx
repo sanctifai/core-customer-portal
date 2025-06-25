@@ -1,66 +1,50 @@
 'use client';
 
+import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { UserButton } from '@clerk/nextjs';
-import { 
-  LayoutDashboard, 
-  User, 
-  Settings, 
-  CreditCard,
-  Bell,
-} from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-  { name: 'Profile', href: '/dashboard/profile', icon: User },
-  { name: 'Billing', href: '/dashboard/billing', icon: CreditCard },
-  { name: 'Notifications', href: '/dashboard/notifications', icon: Bell },
-  { name: 'Settings', href: '/dashboard/settings', icon: Settings },
+  { name: 'Dashboard', href: '/dashboard' },
+  { name: 'Profile', href: '/dashboard/profile' },
 ];
 
 export default function DashboardNav() {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-col h-full bg-white border-r">
-      <div className="p-6">
-        <Link href="/dashboard" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold">Portal</span>
-        </Link>
-      </div>
-      <nav className="flex-1 p-4 space-y-1">
-        {navigation.map((item) => {
-          const isActive = pathname === item.href;
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                isActive
-                  ? 'bg-blue-50 text-blue-700'
-                  : 'text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              <item.icon
-                className={`mr-3 h-5 w-5 ${
-                  isActive ? 'text-blue-700' : 'text-gray-400'
-                }`}
-              />
-              {item.name}
-            </Link>
-          );
-        })}
-      </nav>
-      <div className="p-4 border-t">
-        <div className="flex items-center space-x-4">
-          <UserButton afterSignOutUrl="/login" />
-          <div className="flex-1">
-            <p className="text-sm font-medium text-gray-900">Account</p>
-            <p className="text-xs text-gray-500">Manage your account</p>
+    <nav className="bg-white shadow">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex">
+            <div className="flex-shrink-0 flex items-center">
+              <Link href="/dashboard" className="text-xl font-bold text-gray-800">
+                Customer Portal
+              </Link>
+            </div>
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
+                    pathname === item.href
+                      ? 'border-blue-500 text-gray-900'
+                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center">
+            <UserButton afterSignOutUrl="/login" />
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 } 
