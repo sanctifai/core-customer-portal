@@ -1,25 +1,31 @@
 'use client';
 
-import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { UserButtonCustom } from './UserButtonCustom';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard' },
-  { name: 'Profile', href: '/dashboard/profile' },
+  {
+    name: 'Dashboard',
+    href: '/dashboard',
+  },
+  {
+    name: 'Profile',
+    href: '/dashboard/profile',
+  },
 ];
 
 export default function DashboardNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white shadow">
+    <nav className="bg-white dark:bg-gray-900 shadow dark:shadow-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/dashboard" className="text-xl font-bold text-gray-800">
+              <Link href="/dashboard" className="text-xl font-bold text-gray-900 dark:text-white">
                 Customer Portal
               </Link>
             </div>
@@ -31,8 +37,8 @@ export default function DashboardNav() {
                   className={cn(
                     'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
                     pathname === item.href
-                      ? 'border-blue-500 text-gray-900'
-                      : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                      ? 'border-blue-500 text-gray-900 dark:text-white'
+                      : 'border-transparent text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-300'
                   )}
                 >
                   {item.name}
@@ -41,7 +47,7 @@ export default function DashboardNav() {
             </div>
           </div>
           <div className="flex items-center">
-            <UserButton afterSignOutUrl="/login" />
+            <UserButtonCustom />
           </div>
         </div>
       </div>
