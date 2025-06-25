@@ -1,11 +1,7 @@
-import { ClerkProvider } from '@clerk/nextjs';
-import { Toaster } from 'sonner';
+import RootLayoutClient from '@/components/RootLayoutClient';
 import { Inter } from 'next/font/google';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
-const queryClient = new QueryClient();
 
 export const metadata = {
   title: 'Customer Portal',
@@ -17,16 +13,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <ClerkProvider>
-      <QueryClientProvider client={queryClient}>
-        <html lang="en">
-          <body className={inter.className}>
-            {children}
-            <Toaster position="top-right" />
-          </body>
-        </html>
-      </QueryClientProvider>
-    </ClerkProvider>
-  );
+  return <RootLayoutClient inter={inter}>{children}</RootLayoutClient>;
 }
