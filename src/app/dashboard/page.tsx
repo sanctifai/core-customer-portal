@@ -32,7 +32,7 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="space-y-8 p-8 bg-gray-50 dark:bg-gray-950 min-h-screen">
+    <div className="space-y-8 p-8">
       <div>
         <h2 className="text-3xl font-bold tracking-tight">
           Welcome back, {user?.firstName || 'User'}

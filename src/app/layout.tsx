@@ -29,32 +29,34 @@ export default function RootLayout({
       appearance={{
         variables: { colorPrimary: '#2563eb' },
         elements: {
-          card: "bg-white dark:bg-gray-800",
-          navbar: "bg-white dark:bg-gray-800",
+          card: "bg-white dark:bg-gray-900",
+          navbar: "bg-white dark:bg-gray-900",
           navbarButton: "text-gray-600 dark:text-gray-300",
           headerTitle: "text-gray-900 dark:text-white",
           headerSubtitle: "text-gray-600 dark:text-gray-400",
           dividerLine: "bg-gray-200 dark:bg-gray-700",
           dividerText: "text-gray-600 dark:text-gray-400",
           formFieldLabel: "text-gray-700 dark:text-gray-300",
-          formFieldInput: "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700",
+          formFieldInput: "bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-800",
           formButtonPrimary: "bg-blue-600 hover:bg-blue-700 text-white",
-          formButtonReset: "hover:bg-gray-100 dark:hover:bg-gray-700",
+          formButtonReset: "hover:bg-gray-100 dark:hover:bg-gray-800",
           footerActionLink: "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300",
           footerActionText: "text-gray-600 dark:text-gray-400",
           userPreviewMainIdentifier: "text-gray-900 dark:text-white",
           userPreviewSecondaryIdentifier: "text-gray-600 dark:text-gray-400",
-          userButtonPopoverActionButton: "hover:bg-gray-100 dark:hover:bg-gray-700",
+          userButtonPopoverActionButton: "hover:bg-gray-100 dark:hover:bg-gray-800",
           userButtonPopoverActionButtonText: "text-gray-600 dark:text-gray-300",
           userButtonPopoverActionButtonIcon: "text-gray-600 dark:text-gray-300",
         },
       }}
     >
       <html lang="en" suppressHydrationWarning className="dark">
-        <body className={`${inter.className} bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen`}>
+        <body className={`${inter.className} bg-gray-50 dark:bg-black min-h-screen antialiased`}>
           <ThemeProvider>
-            <Toaster richColors position="top-right" theme="system" />
-            {children}
+            <div className="min-h-screen bg-gray-50 dark:bg-black">
+              <Toaster richColors position="top-right" theme="system" />
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </html>
