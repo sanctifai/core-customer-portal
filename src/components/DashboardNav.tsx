@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { UserButtonCustom } from './UserButtonCustom';
+import { ThemeToggle } from './ThemeToggle';
 
 const navigation = [
   {
@@ -47,6 +48,7 @@ export default function DashboardNav() {
             </div>
           </div>
           <div className="flex items-center">
+            <ThemeToggle />
             <UserButtonCustom />
           </div>
         </div>

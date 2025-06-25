@@ -51,9 +51,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning className="dark">
-        <body className={`${inter.className} bg-red-500 dark:bg-black min-h-screen antialiased`}>
+        <body className={`${inter.className}  min-h-screen antialiased`}>
           <ThemeProvider>
-            <div className="min-h-screen bg-red-500 dark:bg-black">
+            <div className="min-h-screen bg-red-100 dark:bg-red-500">
               <Toaster richColors position="top-right" theme="system" />
               {children}
             </div>
