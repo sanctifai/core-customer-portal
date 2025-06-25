@@ -4,7 +4,14 @@ services:
     env: node
     region: oregon # or your preferred region
     plan: starter # or your preferred plan
-    buildCommand: npm ci && npm run build
+    buildCommand: |
+      if [ -d "node_modules" ]; then
+        echo "Cache found, using cached node_modules"
+      else
+        echo "Cache not found, installing dependencies"
+        npm ci
+      fi
+      npm run build
     startCommand: npm start
     healthCheckPath: /
     envVars:
